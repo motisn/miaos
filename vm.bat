@@ -8,6 +8,7 @@ IF "%1"=="" (
 ) ELSE IF "%1"=="off" (
     powershell Stop-VM -Name PlejEta
 ) ELSE IF "%1"=="set" (
+    powershell Set-VMFloppyDiskDrive PlejEta $null
     SETLOCAL enabledelayedexpansion
     set /p IMG="FD image name:"
     powershell Set-VMFloppyDiskDrive PlejEta %~dp0\!IMG!
